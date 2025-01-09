@@ -1,0 +1,34 @@
+1. Persiapan Sistem
+
+Pastikan Anda memiliki server (lokal atau berbasis cloud) dan memenuhi spesifikasi Moodle.
+Spesifikasi Minimal Moodle
+
+   - Web Server: Apache
+   - Database: MySQL, MariaDB, PostgreSQL, atau MS SQL Server
+   - PHP: Versi 8.3 ( untuk versi sekrang di linux 24 ) 
+   - RAM: Minimal 1GB (disarankan 2GB atau lebih)
+   - Storage: Minimal 200MB untuk file Moodle, tambahan untuk konten e-learning
+
+-Alat yang Dibutuhkan
+
+   - Akses ke terminal/SSH (jika server berbasis Linux)
+   - Text editor (seperti nano atau vim)
+   - Browser untuk akses antarmuka Moodle
+
+2. Instalasi Moodle
+a. Unduh Moodle
+
+-Unduh Moodle dari situs resminya: https://download.moodle.org/
+-Upload file ke server menggunakan FTP atau wget langsung dari terminal:
+
+wget https://download.moodle.org/stableXYZ/moodle-latest-XYZ.tgz
+tar -xvzf moodle-latest-XYZ.tgz
+
+b. Siapkan Direktori Moodle
+-Pindahkan file Moodle ke direktori root web server:
+$mv moodle /var/www/html/
+-Buat direktori untuk data Moodle:
+$mkdir /var/moodledata
+$chmod 777 /var/moodledata
+
+   
