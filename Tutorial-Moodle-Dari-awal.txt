@@ -30,5 +30,19 @@ $mv moodle /var/www/html/
 -Buat direktori untuk data Moodle:
 $mkdir /var/moodledata
 $chmod 777 /var/moodledata
+c. Atur Database
+1.Login ke MySQL/MariaDB:
+$mysql -u root -p
+2.Buat database dan user untuk Moodle:
+CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'moodleuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON moodle.* TO 'moodleuser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+d. Konfigurasi Web Server
+- Pastikan modul PHP yang diperlukan diinstal:
+$sudo apt install php libapache2-mod-php php-mysql php-xml php-curl php-zip php-intl php-mbstring
+-Restart server:
+sudo systemctl restart apache2
 
-   
+
